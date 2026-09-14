@@ -97,5 +97,4 @@ The output directory can be customized with the `INSULATOR_OUTPUT_DIR` environme
 - The model weights and YAML configuration are selected at runtime, so the detection model can be replaced without changing the main interface code.
 - The graphical interface text and font names have been internationalized where appropriate.
 - Training scripts are not included in the current streamlined application directory. This repository focuses on application-side detection and deployment.
-- Software packages that don't require environment setup can be uploaded via GitHub Releases. Users only need to modify the images, weight files, and dataset configuration files to use it.
-
+- Software packages that don't require environment setup can be loaded via GitHub Releases. Users only need to modify the images, weight files, and dataset configuration files to use it.
