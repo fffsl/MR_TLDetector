@@ -14,6 +14,19 @@ MR_TLDetector is a PyQt5-based desktop application for transmission line defect 
 - Detection result filtering by object class.
 - Export of detection records to CSV.
 
+The functions of rows 1–10 in the function bar on the right side of the main interface are as follows:
+
+Function 1: Select Image File  # Single image input;
+Function 2: Select Image Folder # Batch image file input;
+Function 3: Select Video File # Video input;
+Function 4: Select Camera Source # Camera invocation;
+Function 5: IoU threshold: the IoU parameter during object detection; only when the IoU of the detection box is greater than this value will the result be displayed; default 0.45;
+Function 6: Confidence threshold: the conf parameter during object detection; only when the confidence of the detected object is greater than this value will the result be displayed; default 0.45;
+Function 7: Image inference size: the fixed size to which the image is resized during inference; default 640;
+Function 8: Dataset configuration file (.yaml);
+Function 9: The model to be used for inference (.pt), generally the optimal model after training;
+Function 10: Preprocessing algorithms, including DCP (Dehazing), DDN (Deraining), DesnowNet (Desnowing), etc.; DCP is recommended.
+
 ## Project Structure
 
 ```text
@@ -49,12 +62,6 @@ Run from the project root:
 
 ```powershell
 python GUI.py
-```
-
-Alternatively, run the packaged module entry point:
-
-```powershell
-python -m MR_TLDetector
 ```
 
 ## Basic Workflow
