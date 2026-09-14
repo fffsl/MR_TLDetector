@@ -1,0 +1,18 @@
+# Usage: pip install -r requirements.txt
+
+--extra-index-url https://download.pytorch.org/whl/cu118
+torch==2.0.0+cu118
+torchvision==0.15.1+cu118
+
+tqdm==4.70.0
+ultralytics==8.4.138
+PyQt5==5.15.11
+opencv-python==5.0.0.93
+pillow==12.3.0
+numpy==1.26.4
+scipy==1.15.3
+pandas==2.3.3
+matplotlib==3.10.9
+PyYAML==6.0.3
+pyinstaller==6.22.3
+

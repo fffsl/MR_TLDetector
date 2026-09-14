@@ -1,0 +1,94 @@
+# MR_TLDetector
+
+**Meteorological Resilient Transmission Line Defect Detection System**  
+
+MR_TLDetector is a PyQt5-based desktop application for transmission line defect detection under challenging meteorological conditions. It integrates YOLO-based object detection, optional image preprocessing, visual result display, detection record management, and CSV export in a single graphical interface.  
+
+## Features
+
+- Graphical detection interface for image, image-folder, video, and camera inputs.
+- YOLO model loading through user-selected weight files.
+- Dataset configuration loading through user-selected YAML files.
+- Optional meteorological image preprocessing, including dehazing, deraining, desnowing, low-light enhancement, contrast enhancement, brightness correction, white balance, sharpening, and denoising.
+- Real-time display of detection boxes, confidence scores, object categories, coordinates, and inference time.
+- Detection result filtering by object class.
+- Export of detection records to CSV.
+
+## Project Structure
+
+```text
+MR_TLDetector/
+├── GUI.py                  # Main PyQt5 graphical application
+├── MR_TLDetector/          # Packaged Python module
+│   ├── __init__.py
+│   ├── __main__.py         # Module entry point
+│   ├── inference.py        # Reusable inference components
+│   └── paths.py            # Runtime path helpers
+├── UI/
+│   └── main.ui             # Qt Designer interface file
+├── icon/                   # Application icons and UI images
+├── test/                   # Sample images and model/config files
+├── output/                 # Runtime detection output
+└── requirements.txt        # Python dependencies
+```
+
+
+## Environment
+
+The project is intended for Python on Windows and uses PyQt5, OpenCV, NumPy, PyYAML, Ultralytics, and related runtime dependencies.
+
+Install dependencies:
+
+```powershell
+pip install -r requirements.txt
+```
+
+## Running the Application
+
+Run from the project root:
+
+```powershell
+python GUI.py
+```
+
+Alternatively, run the packaged module entry point:
+
+```powershell
+python -m MR_TLDetector
+```
+
+## Basic Workflow
+
+1. Select a YAML data configuration file.
+2. Select a YOLO weight file.
+3. Choose an input source: image, image folder, video file, or camera.
+4. Select preprocessing methods if the input is affected by fog, rain, snow, low light, noise, or other visual degradation.
+5. Click **Start** to run detection.
+6. Review detection results in the image display area and result table.
+7. Export records with **Export Data** when needed.
+
+## Supported Preprocessing Methods
+
+- `DCP (Dehazing)`: dehazing based on dark-channel prior.
+- `DDN (Deraining)`: rain interference reduction.
+- `DesnowNet (Desnowing)`: snow interference reduction.
+- `LIME (Low-light Enhancement)`: low-light enhancement.
+- `CLAHE (Local Contrast)`: local contrast enhancement.
+- `Gamma (Brightness)`: brightness correction.
+- `AWB (White Balance)`: automatic white balance.
+- `USM (Sharpening)`: image sharpening.
+- `NLM (Denoising)`: image denoising.
+
+## Output
+
+Detection outputs are saved under the `output/` directory by default. Each run creates a timestamped folder containing processed results and copied source images. CSV files exported from the interface are also saved in the corresponding output directory.
+
+The output directory can be customized with the `INSULATOR_OUTPUT_DIR` environment variable.
+
+## Notes
+
+- The model weights and YAML configuration are selected at runtime, so the detection model can be replaced without changing the main interface code.
+- The graphical interface text and font names have been internationalized where appropriate.
+- Training scripts are not included in the current streamlined application directory. This repository focuses on application-side detection and deployment.
+- Software packages that don't require environment setup can be uploaded via GitHub Releases. Users only need to modify the images, weight files, and dataset configuration files to use it.
+
