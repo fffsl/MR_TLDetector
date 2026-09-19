@@ -1,7 +1,0 @@
-train: ./ultralytics-main/datasets/train
-val: ./ultralytics-main/datasets/val
-test: ./ultralytics-main/datasets/test
-
-# Classes
-nc: 2
-names: ['DT', 'TT']

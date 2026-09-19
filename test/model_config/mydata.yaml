@@ -1,8 +1,0 @@
-
-train: ./ultralytics-main/datasets/train
-val: ./ultralytics-main/datasets/val
-test: ./ultralytics-main/datasets/test
-# number of classes
-nc: 7
-# class names
-names: ['insulator',  'damper', 'nest', 'insulator_explosion','insulator_flashover','damper_displacement','wire_damage']
