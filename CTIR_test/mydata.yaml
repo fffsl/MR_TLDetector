@@ -1,0 +1,9 @@
+train: E:\Insulator_Detection\VOCData\ImageSets\train.txt
+val: E:\Insulator_Detection\VOCData\ImageSets\val.txt
+
+# number of classes
+nc: 5
+
+# class names
+names: ["Car", "Pedestrian", "Cyclist", "Bus", "Truck"]
+
