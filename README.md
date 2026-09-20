@@ -38,6 +38,7 @@ MR_TLDetector/
 │   ├── inference.py        # Reusable inference components
 │   └── paths.py            # Runtime path helpers
 ├── Remote_sensing test     #  Remote sensing test
+├── CTIR_test               #  CTIR test
 ├── UI/
 │   └── main.ui             # Qt Designer interface file
 ├── icon/                   # Application icons and UI images
