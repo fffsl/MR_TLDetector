@@ -100,4 +100,5 @@ The output directory can be customized with the `INSULATOR_OUTPUT_DIR` environme
 - The graphical interface text and font names have been internationalized where appropriate.
 - Training scripts are not included in the current streamlined application directory. This repository focuses on application-side detection and deployment.
 - Software packages that don't require environment setup can be loaded via GitHub Releases. Users only need to modify the images, weight files, and dataset configuration files to use it.
+- It is recommended to go directly to Releases to download and use the already packaged exe software.
 - A software version supporting GPU acceleration and FLOPs selection is provided for a broad range of users. The software can be downloaded via Quark Netdisk at: https://pan.quark.cn/s/a58713e1e62b
