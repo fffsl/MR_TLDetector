@@ -38,7 +38,7 @@ MR_TLDetector/
 │   ├── inference.py        # Reusable inference components
 │   ├── paths.py            # Runtime path helpers
 │   └── restoration.py      # Restormer, SnowFormer, OneRestore
-├── external/
+├── external/               # the Quark Cloud Drive link： https://pan.quark.cn/s/02a6ee43fedd
 │   ├── OneRestore/         # Universal restoration model code and checkpoints
 │   ├── Restormer/          # Dedicated deraining model code and checkpoint
 │   └── SnowFormer/         # Dedicated desnowing model code
