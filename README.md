@@ -25,7 +25,7 @@ Function 6: Confidence threshold: the conf parameter during object detection; on
 Function 7: Image inference size: the fixed size to which the image is resized during inference; default 640;
 Function 8: Dataset configuration file (.yaml);
 Function 9: The model to be used for inference (.pt), generally the optimal model after training;
-Function 10: Preprocessing algorithms, including DCP (Dehazing), DDN (Deraining), DesnowNet (Desnowing), etc.; DCP is recommended.
+Function 10: Preprocessing algorithms, including DCP (dehazing), Restormer Derain, SnowFormer Desnow, LIME-Lite, CLAHE, OneRestore.
 
 ## Project Structure
 
@@ -36,7 +36,12 @@ MR_TLDetector/
 │   ├── __init__.py
 │   ├── __main__.py         # Module entry point
 │   ├── inference.py        # Reusable inference components
-│   └── paths.py            # Runtime path helpers
+│   ├── paths.py            # Runtime path helpers
+│   └── restoration.py      # Restormer, SnowFormer, OneRestore
+├── external/
+│   ├── OneRestore/         # Universal restoration model code and checkpoints
+│   ├── Restormer/          # Dedicated deraining model code and checkpoint
+│   └── SnowFormer/         # Dedicated desnowing model code
 ├── Remote_sensing test     #  Remote sensing test
 ├── CTIR_test               #  CTIR test
 ├── UI/
@@ -46,7 +51,6 @@ MR_TLDetector/
 ├── output/                 # Runtime detection output
 └── requirements.txt        # Python dependencies
 ```
-
 
 ## Environment
 
@@ -67,6 +71,7 @@ python GUI.py
 ```
 
 ## Basic Workflow
+DCP (dehazing), Restormer Derain, SnowFormer Desnow, , CLAHE, OneRestore
 
 1. Select a YAML data configuration file.
 2. Select a YOLO weight file.
@@ -79,14 +84,20 @@ python GUI.py
 ## Supported Preprocessing Methods
 
 - `DCP (Dehazing)`: dehazing based on dark-channel prior.
-- `DDN (Deraining)`: rain interference reduction.
-- `DesnowNet (Desnowing)`: snow interference reduction.
-- `LIME (Low-light Enhancement)`: low-light enhancement.
-- `CLAHE (Local Contrast)`: local contrast enhancement.
-- `Gamma (Brightness)`: brightness correction.
-- `AWB (White Balance)`: automatic white balance.
-- `USM (Sharpening)`: image sharpening.
-- `NLM (Denoising)`: image denoising.
+- `Restormer Derain`: rain interference reduction.
+- `SnowFormer Desnow`: snow interference reduction.
+- `LIME-Lite`: low-light enhancement.
+- `CLAHE(local contrast)`: local contrast enhancement.
+- `OneRestore`: brightness correction.
+
+  ## Supported Preprocessing Methods
+
+- `DCP (Dehazing)`: dehazing based on dark-channel prior, atmospheric-light estimation from the brightest dark-channel pixels, and guided-filter transmission refinement.
+- `Restormer Derain`: Restormer deraining with the local `external/Restormer/Deraining/pretrained_models/deraining.pth` checkpoint, followed by vertical rain-streak cleanup and mild brightening for the detector images.
+- `Fast Desnow (Snow Spots)` / `SnowFormer Desnow`: the GUI shows `SnowFormer Desnow` only when `external/SnowFormer/pretrained_models/SnowFormer_CSD.pth` is present. Without that checkpoint, it shows `Fast Desnow (Snow Spots)` and uses a lightweight snow-spot mask, Telea inpainting, edge-preserving blending, and mild brightening.
+- `LIME-Lite`: a lightweight illumination-map enhancement with highlight limiting. It uses the channel-maximum illumination estimate from LIME, but substitutes bilateral smoothing and a custom gain for LIME's structure-aware refinement.
+- `CLAHE (Local Contrast)`: contrast-limited adaptive histogram equalization on the LAB luminance channel for local contrast enhancement.
+- `OneRestore Auto`: OneRestore with the real-scene checkpoint and automatic degradation embedding, followed by conservative luminance, color-shift, highlight, and edge-preserving constraints to reduce visual distortion.
 
 ## Output
 
