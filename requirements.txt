@@ -14,5 +14,15 @@ scipy==1.15.3
 pandas==2.3.3
 matplotlib==3.10.9
 PyYAML==6.0.3
+tqdm==4.70.0
+psutil==7.2.2
+requests==2.34.
 pyinstaller==6.22.3
-
+einops==0.8.2
+timm==1.0.29
+huggingface_hub==1.32.0
+safetensors==0.8.0
+pyinstaller==6.22.3
+pyinstaller-hooks-contrib==2026.7
+pefile==2024.8.26
+pywin32-ctypes==0.2.3
