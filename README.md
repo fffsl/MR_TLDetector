@@ -54,6 +54,11 @@ MR_TLDetector/
 
 ## Environment
 
+Anaconda needs to be downloaded first, and a Python 3.10 environment must be created under conda. The commands are as follows:
+conda create -n your_env_name python=3.10 -y
+conda activate your_env_name
+
+
 The project is intended for Python on Windows and uses PyQt5, OpenCV, NumPy, PyYAML, Ultralytics, and related runtime dependencies.
 
 Install dependencies:
