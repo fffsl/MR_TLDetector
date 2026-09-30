@@ -52,8 +52,8 @@ MR_TLDetector/
 └── requirements.txt        # Python dependencies
 ```
 You need to download the external file via Quark Cloud Drive or from the Release, and place the three directories contained in this file into external. The download methods are as follows:
--**https://pan.quark.cn/s/02a6ee43fedd**
--**Release**
+- **https://pan.quark.cn/s/02a6ee43fedd**
+- **Release**
 
 
 ## Environment
