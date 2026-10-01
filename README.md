@@ -38,7 +38,7 @@ MR_TLDetector/
 │   ├── inference.py        # Reusable inference components
 │   ├── paths.py            # Runtime path helpers
 │   └── restoration.py      # Restormer, SnowFormer, OneRestore
-├── external/               # the Quark Cloud Drive link： https://pan.quark.cn/s/02a6ee43fedd  or  Release
+├── external/               # the Quark Cloud Drive link： https://pan.quark.cn/s/02a6ee43fedd  or  Releases
 │   ├── OneRestore/         # Universal restoration model code and checkpoints
 │   ├── Restormer/          # Dedicated deraining model code and checkpoint
 │   └── SnowFormer/         # Dedicated desnowing model code
@@ -53,7 +53,7 @@ MR_TLDetector/
 ```
 You need to download the external file via Quark Cloud Drive or from the Release, and place the three directories contained in this file into external. The download methods are as follows:
 - **https://pan.quark.cn/s/02a6ee43fedd**
-- **Release**
+- **Releases**
 
 
 ## Environment
