@@ -19,7 +19,7 @@ The functions of rows 1–10 in the function bar on the right side of the main i
 - Function 1: Select Image File  # Single image input;
 - Function 2: Select Image Folder # Batch image file input;
 - Function 3: Select Video File # Video input;
-- Function 4: Select Camera Source # Camera invocation;
+- Function 4: Select Camera Source # Camera invocation。After selecting Camera Source and choosing a configuration file, click Start to invoke the detection function using the local camera (at this point, Camera displaying 0 indicates that the camera has been successfully accessed)；
 - Function 5: IoU threshold: the IoU parameter during object detection; only when the IoU of the detection box is greater than this value will the result be displayed; default 0.45;
 - Function 6: Confidence threshold: the conf parameter during object detection; only when the confidence of the detected object is greater than this value will the result be displayed; default 0.45;
 - Function 7: Image inference size: the fixed size to which the image is resized during inference; default 640;
